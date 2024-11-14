@@ -1,0 +1,43 @@
+@startuml
+
+title baseball_game
+'Explica las relaciones que existen, los tipos de datos y la encapsulamiento'
+
+class Persona {
+    -nombre: String
+    -telefono: String
+    -direccion: String
+}
+
+class Jugador {
+    -numero: int
+    -posicion: String
+    -esCapitan: boolean
+}
+
+class Entrenador {
+    -nivelAcreditacion: String
+    -anosExperiencia: int
+}
+
+class Equipo {
+    -nombre: String
+    -registro: String
+}
+
+class Juego {
+    -localidad: String
+    -puntuacionLocal: int
+    -puntuacionVisitante: int
+    -fecha: Date
+}
+
+Persona <|-- Jugador
+Persona <|-- Entrenador
+
+Equipo "1" *-- "6..20" Jugador
+Equipo "1..M" o-- "0..1" Entrenador
+Juego "1" -- "2" Equipo
+
+
+@enduml

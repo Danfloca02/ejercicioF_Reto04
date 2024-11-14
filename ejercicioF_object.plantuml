@@ -1,0 +1,191 @@
+@startuml
+
+title Diagrama_VE_CO
+'EL diagrama incluye todos los objetos que participan en el juego VEnezuela-Colombia'
+
+object "Venezuela:Equipo" as ve {
+     string nombre: Volley Vinotinto
+     string registro: Seleccion Nacional de Volley Venezuela
+}
+
+object "Colombia:Equipo" as co {
+     string nombre: Volley ClaroPinto
+     string registro: Seleccion Nacional de Volley Colombia
+}
+
+object "CO-VE PANAMERICANOS DE VOLLEY:Juego" as CoVe {
+    string localidad: Chile
+    int puntuacionLocal: 45
+    int puntuacionVisitante: 68
+    Date fecha: 19/12/2024
+}
+
+'Venezuelan Team'
+object "Maria Gonzalez:Jugador" as mg1 {
+    nombre = "Maria Gonzalez"
+    telefono = "+584121234567"
+    direccion = "Caracas"
+    numero = 4
+    posicion = "Armador"
+    esCapitan = false
+}
+
+object "Ana Rodriguez:Jugador" as ar {
+    nombre = "Ana Rodriguez"
+    telefono = "+584141234568"
+    direccion = "Maracaibo"
+    numero = 7
+    posicion = "Libero"
+    esCapitan = false
+}
+
+object "Laura Perez:Jugador" as lp {
+    nombre = "Laura Perez"
+    telefono = "+584161234569"
+    direccion = "Valencia"
+    numero = 12
+    posicion = "Central"
+    esCapitan = false
+}
+
+object "Carmen Diaz:Jugador" as cd {
+    nombre = "Carmen Diaz"
+    telefono = "+584241234570"
+    direccion = "Barquisimeto"
+    numero = 15
+    posicion = "Opuesto"
+    esCapitan = false
+}
+
+object "Sofia Martinez:Jugador" as sm {
+    nombre = "Sofia Martinez"
+    telefono = "+584261234571"
+    direccion = "Merida"
+    numero = 8
+    posicion = "Rematador"
+    esCapitan = false
+}
+
+object "Patricia Torres:Jugador" as pt {
+    nombre = "Patricia Torres"
+    telefono = "+584161234572"
+    direccion = "Maracay"
+    numero = 2
+    posicion = "Central"
+    esCapitan = false
+}
+
+object "Maria Garcia:Jugador" as mg2 {
+    string nombre = "Maria Garcia"
+    string telefono = "+584245424166"
+    string direccion = "Caracas"
+    int numero = 16
+    string posicion = "Rematador" 
+    boolean esCapitan = true
+}
+
+object "Carlos Martinez:Entrenador" as cm {
+    string nombre = "Maria Garcia"
+    string telefono = "+584244874995"
+    string direccion = "Caracas"
+    nivelAcreditacion = "Director"
+    anosExperiencia = 15
+}
+
+'Colombian Team'
+object "Karla Castillo:Jugador" as kc{
+    string nombre = "Karla Castillo"
+    string telefono = "+576015487712"
+    string direccion = "Antioquia"
+    int numero = 11
+    string posicion = "Rematador" 
+    boolean esCapitan = true
+}
+
+object "Diana Ramirez:Jugador" as dr {
+    nombre = "Diana Ramirez"
+    telefono = "+576012345678"
+    direccion = "Bogota"
+    numero = 3
+    posicion = "Armador"
+    esCapitan = false
+}
+
+object "Andrea Morales:Jugador" as am {
+    nombre = "Andrea Morales"
+    telefono = "+576022345679"
+    direccion = "Medellin"
+    numero = 6
+    posicion = "Libero"
+    esCapitan = false
+}
+
+object "Paula Vargas:Jugador" as pv {
+    nombre = "Paula Vargas"
+    telefono = "+576032345680"
+    direccion = "Cali"
+    numero = 9
+    posicion = "Central"
+    esCapitan = false
+}
+
+object "Valentina Ortiz:Jugador" as vo {
+    nombre = "Valentina Ortiz"
+    telefono = "+576042345681"
+    direccion = "Barranquilla"
+    numero = 14
+    posicion = "Opuesto"
+    esCapitan = false
+}
+
+object "Camila Herrera:Jugador" as ch {
+    nombre = "Camila Herrera"
+    telefono = "+576052345682"
+    direccion = "Cartagena"
+    numero = 5
+    posicion = "Rematador"
+    esCapitan = false
+}
+
+object "Isabella Lopez:Jugador" as il {
+    nombre = "Isabella Lopez"
+    telefono = "+576062345683"
+    direccion = "Bucaramanga"
+    numero = 1
+    posicion = "Central"
+    esCapitan = false
+}
+
+object "Fabian Echeverria:Entrenador" as fe {
+    string nombre = "Fabian Echeverria"
+    string telefono = "+576016671226"
+    string direccion = "Bogota"
+    nivelAcreditacion = "Tecnico Secundario"
+    anosExperiencia = 5
+}
+
+CoVe -- co
+CoVe -- ve
+
+ve o-- cm
+ve *-- mg1
+ve *-- mg2
+ve *-- ar
+ve *-- lp
+ve *-- cd
+ve *-- sm
+ve *-- pt
+
+co o-- fe
+co *-- kc
+co *-- dr
+co *-- am
+co *-- pv
+co *-- vo
+co *-- ch
+co *-- il
+
+
+
+@enduml
+
